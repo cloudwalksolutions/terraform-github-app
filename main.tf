@@ -7,7 +7,7 @@ locals {
 module "github_repo_iac" {
   count = var.use_tf ? 1 : 0
 
-  source = "app.terraform.io/cloudwalk/repo/github"
+  source = "git::https://github.com/cloudwalksolutions/terraform-github-repo.git?ref=0.0.1"
 
   app_code             = var.app_code
   label                = "v3"
@@ -31,7 +31,7 @@ module "github_repo_iac" {
 
 
 module "github_repo" {
-  source = "app.terraform.io/cloudwalk/repo/github"
+  source = "git::https://github.com/cloudwalksolutions/terraform-github-repo.git?ref=0.0.1"
 
   app_code             = var.app_code
   repo_name            = var.repo_name
